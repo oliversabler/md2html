@@ -1,0 +1,12 @@
+[package]
+name = "md2html"
+version = "0.1.0"
+authors = ["Oliver Sabler"]
+edition = "2021"
+description = "Simple CLI application to convert markdown to html."
+readme = "README.md"
+repository = "https://github.com/oliversabler/md2html"
+license = "MIT"
+
+[dependencies]
+markdown = "1.0.0-alpha.11"
