@@ -5,20 +5,23 @@ impl MarkdownParser {
         MarkdownParser
     }
 
-    pub fn parse(&self, markdown_content: &str) -> String {
+    pub fn parse(&self, markdown_content: &str, title: &str) -> String {
         let precontent = format!(
-            r#"<!DOCTYPE html>
+            "<!DOCTYPE html>
             <html>
             <head>
                 <title>{}</title>
             </head>
-            <body>"#, "SOME TITLE HERE");
+            <body>",
+            title
+        );
 
         let content = markdown::to_html(markdown_content).to_string();
 
         let postcontent = format!(
-            r#"</body>
-            </html>"#);
+            "</body>
+            </html>"
+        );
 
         format!("{} {} {}", precontent, content, postcontent)
     }

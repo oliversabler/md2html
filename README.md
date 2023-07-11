@@ -9,3 +9,11 @@ To install, run `cargo build --release` and then execute `./md2html` from the */
 
 If you prefer, you can bind the path to an alias to run it from other folders.
 
+## Dependencies
+To format the generated HTML we use (html-tidy)[https://www.html-tidy.org/]. This is executed 
+automatically right before writing the HTML to disk.
+
+Note! This has only been tested using the brew formulae of (tidy-html5)[https://formulae.brew.sh/formula/tidy-html5]
+
+## How to use
+To use, run `md2html /path/to/file.md "Title put in <title> tag"`. Both arguments are required at this point.
