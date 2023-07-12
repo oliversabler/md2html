@@ -16,4 +16,4 @@ automatically right before writing the HTML to disk.
 Note! This has only been tested using the brew formulae of [tidy-html5](https://formulae.brew.sh/formula/tidy-html5)
 
 ## How to use
-To use, run `md2html /path/to/file.md "Title for the <title> tag"`. Both arguments are required at this point.
+To use, run `md2html [OPTIONS] --path <PATH>`. To see other options run `md2html --help`
