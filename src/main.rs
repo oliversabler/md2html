@@ -33,11 +33,15 @@ fn main() {
     let args = Args::parse();
 
     let markdown_file_path = args.path;
-
-    let html_title = if args.html_title.is_some() {
-        args.html_title.unwrap()
-    } else {
-        markdown_file_path.clone()
+    let html_title = match args.html_title {
+        Some(title) => title,
+        None => {
+            let title: String = markdown_file_path
+                .clone()
+                .drain(0..markdown_file_path.len() - 3)
+                .collect();
+            title
+        }
     };
 
     let markdown_content =
