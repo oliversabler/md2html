@@ -16,12 +16,9 @@ impl MarkdownParser {
             title
         );
 
-        let content = markdown::to_html(markdown_content).to_string();
+        let content = markdown::to_html(markdown_content);
 
-        let postcontent = format!(
-            "</body>
-            </html>"
-        );
+        let postcontent = "</body>\n</html>".to_string();
 
         format!("{} {} {}", precontent, content, postcontent)
     }

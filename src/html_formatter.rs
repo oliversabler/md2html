@@ -8,7 +8,7 @@ impl HtmlFormatter {
     }
 
     pub fn format(&self, path: String) {
-        let tidy = Command::new("tidy")
+        Command::new("tidy")
             .arg("-m")
             .arg("-i")
             .arg("-clean")
@@ -18,7 +18,5 @@ impl HtmlFormatter {
             .arg(path)
             .output()
             .expect("Unable to format HTML using Tidy.");
-
-        tidy.stdout;
     }
 }

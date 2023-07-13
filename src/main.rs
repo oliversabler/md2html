@@ -34,7 +34,7 @@ fn main() {
 
     let markdown_file_path = args.path;
 
-    let html_title = if !args.html_title.is_none() {
+    let html_title = if args.html_title.is_some() {
         args.html_title.unwrap()
     } else {
         markdown_file_path.clone()
