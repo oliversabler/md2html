@@ -11,3 +11,5 @@ license = "MIT"
 [dependencies]
 clap = { version = "4.3.11", features = ["derive"] }
 markdown = "1.0.0-alpha.11"
+assert_cmd = "2.0.11"
+predicates = "3.0.3"
