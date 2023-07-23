@@ -19,9 +19,9 @@ fn file_doesnt_exist() -> Result<(), Box<dyn std::error::Error>> {
     let mut cmd = Command::cargo_bin("md2html")?;
 
     cmd.arg("--path").arg("test/file/doesnt/exist");
-    cmd.assert()
-        .failure()
-        .stderr(predicate::str::contains("Failed to read the markdown file"));
+    cmd.assert().failure().stderr(predicate::str::contains(
+        "Application parsing error: No such file or directory (os error 2)",
+    ));
 
     Ok(())
 }
